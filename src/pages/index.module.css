@@ -1,0 +1,70 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.heroBanner {
+  color: #fefefe;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../../static/img/revision-background-header.svg);
+}
+
+.downloads {
+  padding: 9rem 0;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(../../static/img/revision-background-two.jpg);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+    background-image: url(../../static/img/revision-background-header.svg);
+    background-size: cover;
+  }
+
+  .downloads {
+    background-image: url(../../static/img/revision-background-two.jpg);
+  }
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 7px;
+}
+
+.downloadBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7px;
+}
+
+.downloadBtn a {
+  text-decoration: none !important;
+}
+
+.homeButton {
+  width: 100%;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 5px;
+}
+
+.buttonPair {
+  margin-top: 2rem;
+}

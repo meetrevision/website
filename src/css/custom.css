@@ -1,0 +1,287 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url("./kbd.css");
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary-darkest: #65131c;
+  --ifm-color-primary-darker: #a51d2d;
+  --ifm-color-primary-dark: #c01c28;
+  --ifm-color-primary: #f57270;
+  --ifm-color-primary-light: #ed333b;
+  --ifm-color-primary-lighter: #f66151;
+  --ifm-color-primary-lightest: #ffd3d3;
+  --ifm-background-color: #141414 !important;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-details-decoration-color: #d44c4c;
+}
+
+nav .navbar__title {
+  font-size: 20px;
+  line-height: 20px;
+  text-align: start;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+nav .navbar__item {
+  font-size: 16px;
+  line-height: normal;
+  text-align: left;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #242526;
+}
+
+.hero {
+  background-color: #00000062;
+}
+
+.pagination-nav__link {
+  text-decoration: none !important;
+}
+
+.breadcrumbs__link {
+  text-decoration: none !important;
+}
+
+.avatar__name a {
+  color: var(--ifm-link-color);
+  text-decoration: none !important;
+}
+
+header > h2 > a {
+  color: var(--ifm-link-color);
+  text-decoration: none !important;
+}
+
+footer a {
+  color: var(--ifm-color-content);
+  text-decoration: var(--ifm-link-hover-decoration);
+}
+
+footer a:hover {
+  color: inherit;
+  text-decoration: var(--ifm-link-hover-decoration);
+}
+
+footer ul a {
+  text-decoration: none !important;
+}
+
+main a {
+  color: var(--ifm-color-content);
+  text-decoration: var(--ifm-link-hover-decoration);
+}
+
+main a:hover {
+  color: inherit;
+  text-decoration: var(--ifm-link-hover-decoration);
+}
+
+.table-of-contents__link {
+  text-decoration: none !important;
+}
+
+.table-of-contents__link:hover {
+  text-decoration: none !important;
+}
+
+.downloadTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.buttonText {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+    background-image: url(../../static/img/revision-background-header.svg);
+    background-size: cover;
+  }
+
+  .navbar__brand {
+    width: 15rem !important;
+  }
+
+  .downloadButtons {
+    padding-top: 2rem;
+  }
+}
+
+details {
+  --ifm-alert-border-color: #f57270 !important;
+  --ifm-link-color: var(--ifm-alert-border-color) !important;
+  --ifm-alert-background-color: #00000000 !important;
+  --docusaurus-details-decoration-color: var(--ifm-alert-border-color);
+  --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
+  border: 1px solid var(--ifm-alert-border-color);
+  margin: 0 0 var(--ifm-spacing-vertical);
+}
+
+details a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.custom-admonition>div {
+  text-transform: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: "Inter";
+}
+
+.custom-admonition a {
+  text-decoration-color: var(--admonition-color);
+}
+
+.custom-admonition>div p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0 0 calc(1.25 * 0.5rem);
+}
+
+.custom-admonition li>p {
+  margin: 0.2rem 0.2rem;
+}
+
+.custom-admonition code {
+  background-color: rgba(24, 24, 24, 0.3);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+}
+
+.windows {
+  --admonition-color: #46cbff;
+  background-color: #46cbff6a;
+  border-left: 5px solid var(--admonition-color);
+}
+
+.danger {
+  --admonition-color: #ff4646;
+  background-color: #ff46466a;
+  border-left: 5px solid var(--admonition-color);
+}
+
+.warning {
+  --admonition-color: #ffbb00;
+  background-color: #ffbb0040;
+  border-left: 5px solid var(--admonition-color);
+}
+
+.dev {
+  --admonition-color: #00ff88;
+  background-color: #00ff8840;
+  border-left: 5px solid var(--admonition-color);
+}
+
+.info {
+  --admonition-color: #d6d6d6;
+  background-color: #d6d6d640;
+  border-left: 5px solid var(--admonition-color);
+}
+
+.buttonTagsDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttonTags {
+  pointer-events: none;
+  background-color: #232323;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 13px;
+  margin-left: -1px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+}
+
+.discord {
+  font-size: 1rem !important;
+  font-family: "Font Awesome 6 Brands", "Inter";
+}
+
+.lds-center {
+  justify-content: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@counter-style checkmark-emoji {
+  system: cyclic;
+  symbols: "✅";
+  suffix: " ";
+}
+
+.checkmark-list {
+  list-style-type: checkmark-emoji;
+}
+

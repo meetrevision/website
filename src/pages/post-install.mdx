@@ -1,0 +1,346 @@
+---
+title: Post-Install
+hide_table_of_contents: false
+---
+
+
+# Post-Install Guide
+
+Revision ISOs are carefully configured and tweaked to achieve such stability, while still maintaining such excellent performance. Having said that, there's only so much that we can do on our end.
+
+Some things are very specific and tied to your system only, like drivers, BIOS, hardware etc. Things like those, we simply cannot pre-tweak for you, it is impossible to do that and still retain our universal and highly compatible approach.
+
+However, this does NOT mean that we can't help you tweak those things yourself. Revision ISOs are very capable on their own, but if you want the absolute optimal experience, Revision recommends you to follow and apply the Post-Install guide on your system.
+
+You will get better FPS, lower and more stable frametimes, better input and latency.
+
+## How to Activate
+
+<details open><summary>Windows Activation Guides</summary>
+<p>
+
+ReviOS may activate itself automatically upon installation, using the OEM key connected to your BIOS, just like any other Windows version would do.
+
+If your ReviOS installation isn't automatically activated, follow one of the Methods listed down below.
+
+<details><summary>Method 1 - Windows Settings</summary>
+<p>
+
+Go to:
+- Windows Settings > Update & Security > Activation
+
+And now activate Windows in Activation using your product key.
+</p>
+</details>
+
+<details><summary>Method 2 - Control Panel</summary>
+<p>
+
+Head into:
+- Control Panel > System and Security > System
+
+And at the bottom of the page you'll find the header Windows activation, here click <kbd>Change product key</kbd>.
+
+***Note***: Depending on your Windows version, this may redirect you to Windows Settings.
+</p>
+</details>
+
+
+<details><summary>Method 3 - Command Prompt</summary>
+<p>
+
+Press the Windows key + R on your keyboard to open Run.
+
+Now to open the command prompt itself, type in: `CMD`
+
+A new command prompt Window will open, and in this Windows paste the following commands respectively
+
+```
+slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+```
+```
+slmgr /ato
+```
+
+Replace `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX` with your own product key.
+
+</p>
+</details>
+
+<details><summary>Method 4 - Software Licensing User Interface (workaround)</summary>
+<p>
+
+Press the Windows key + R on your keyboard to open Run.
+
+To open the `slui` (Software Licensing User Interface), type in:
+
+```
+slui.exe
+```
+Then type in your product key.
+
+</p>
+</details>
+
+</p>
+</details>
+
+## Recommended
+
+The recommended things to tweak after installing ReviOS. It's suggested that you follow this in a sequential order (1, 2, 3...), but can be done in any order that you wish.
+
+One can also come back to this guide at a later date and redo things if need be, for example, if one wishes to install a new NVIDIA GPU driver, the NVIDIA Control Panel settings may be reverted.
+
+Specifically Affinities will be reverted if you update your GPU Driver, keep that in mind.
+
+It is recommended that you restart after each step.
+
+
+## 1. GPU Drivers
+
+<details open><summary>GPU Driver Installation Guides</summary>
+<p>
+
+### NVIDIA
+
+We're going to be using third party programs called [NVCleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/) and [NVSlimmer](https://www.guru3d.com/files-details/nvidia-driver-slimming-utility.html) to strip our drivers of bloatware, telemetry and unneeded/obsolete features. We're using either of them, not both of them at the same time. Choose the one that fits your habits more.
+
+#### NVCleanstall
+
+<details><summary>Installing NVCleanstall</summary>
+<p>
+
+1. [Download and install NVCleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
+2. Open the program, and tick Install the best driver for my hardware, then click <kbd>Next</kbd>.
+  - You can also manually select your preferred GPU driver with the option below.
+3. Tick Minimum or Recommended in the bottom right, after that hit Next. (We recommend Minimum)
+  - No need to tick the Visual Runtimes as they're already included in the ISO.
+  - [PhysX](https://developer.nvidia.com/gameworks-physx-overview) is only used by a [handful of games](https://en.wikipedia.org/wiki/List_of_games_with_hardware-accelerated_PhysX_support), so most of you can keep this unticked.
+  - If ShadowPlay is a necessity, make sure you only select the bare minimum required for it. Note that ShadowPlay adds telemetry onto your system!
+    - You can use [this script](https://github.com/Moyster/BaiGfe) to remove GeForce Expterience telemetry.
+4. While the Driver is being downloaded you can tick a few tweaks under Additional Tweaks.
+  - We recommend you to tick everything except Unattended Express Installation.
+5. Now your driver will be installed like any other NVIDIA driver.
+
+</p>
+</details>
+
+#### NVSlimmer
+
+<details><summary>Installing NVSlimmer</summary>
+<p>
+
+1. [Download and install NVSlimmer](https://www.guru3d.com/files-get/nvidia-driver-slimming-utility,2.html) and download regular Nvidia drivers from the official website (I recommend [the 442.74 version](https://www.nvidia.com/download/driverResults.aspx/158756/en-us/))
+2. Import your downloaded driver to the software, and preferably keep only both required packages.
+3. Only check other options if you need them, ie. if you have a Usb-C port, tick the Usb-c driver, or if you need Geforce Experience, tick it
+  - No need to tick the Visual Runtimes as we are separately installing them afterwards.
+  - [PhysX](https://developer.nvidia.com/gameworks-physx-overview) is only used by a [handful of games](https://en.wikipedia.org/wiki/List_of_games_with_hardware-accelerated_PhysX_support), so most of you can keep this unticked.
+4. Press Apply and then Install driver when prompted, and it will install just like any NVIDIA driver.
+
+</p>
+</details>
+
+### AMD
+
+Installing your GPU drivers on AMD Cards is straightforward and doesn't need any slimming whatsover, unless you don't even want the AMD Control Panel.
+
+*We don't recommend that, but if you really want to, follow the steps in this video provided by Zeal.*
+#### [🔗 Video Tutorial](https://youtu.be/UM4lfvlBevl)
+
+### Intel - For U Series (6th Gen+)
+
+<details><summary>Installing Drivers for Intel</summary>
+<p>
+
+Newer Intel chips have been stuck with DCH drivers, which need Microsoft store to get the control panel. If you are in this scenario and want the old Intel control panel, follow the steps below:
+
+1. Download the Intel driver .zip from [here](https://drive.google.com/file/d/1TrqlYvl644g0s3eOhfLJPRz3PgGGF8RI/view) and unzip it.
+2. Open device manager, and navigate to display adapters .
+3. Right click your Intel display adapter and click update driver.
+5. Click <kbd>Let me pick from a list</kbd> and then press “Have disk”.
+6. Click <kbd>Browse</kbd> and navigate into the folder we extracted earlier.
+7. Enter the graphics folder, and select the .inf that appears on screen.
+8. Click <kbd>Open</kbd>, and then <kbd>Okay</kbd>, and then scroll through and click on your graphics card. 
+9. Click <kbd>Next</kbd> and then <kbd>Yes</kbd>
+
+</p>
+</details>
+
+</p>
+</details>
+
+
+## 2. DirectX Runtime
+
+<details open><summary>Installing DirectX Runtime Guide</summary>
+<p>
+
+DirectX is a collection of APIs required for games to run and function optimally.
+
+It is not required that one install these here and now, as most game clients (Steam, Origin, Uplay etc.) will be installing DirectX in conjunction with a game being installed from said client. Installing them now will ensure that one doesn't miss out on them later, and might save some time during future game installations.
+
+#### Instructions
+1. Download and run the [DirectX End-User Runtime Web Installer](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+2. Upon running the installer one will be introduced to a Welcome page.
+3. Accept the agreement and then click <kbd>Next</kbd> in the bottom right.
+4. The following page will offer you the Bing Bar, make sure to untick Install the Bing Bar as this is considered advertising bloatware.
+5. Now click <kbd>Next</kbd>.
+6. Wait for the installation to complete.
+7. When the installation has completed click <kbd>Finish</kbd> in the bottom right.
+
+</p>
+</details>
+
+## 3. Visual C++ Runtime
+
+<details open><summary>Installing Visual C++ Runtime Guide</summary>
+<p>
+
+Visual C++ Runtimes are required for a diverse range of programs and games. The required Runtimes may be packed with the programs you install, but that is not always the case. Instead of downloading and installing each and every Runtime individually, we will be using an all-in-one installer to speed up the process.
+
+Like DirectX Runtimes, it is recommended that you install Visual C++ now to avoid program errors in the future.
+
+1. Go to the [vcredist GitHub](https://github.com/abbodi1406/vcredist/releases/latest) page by abbodi1406.
+2. Under Assets, download the latest `VisualCppRedist.zip` file.
+3. Once downloaded, extract the .zip file and run the installer.
+
+</p>
+</details>
+
+## 4. NVIDIA Control Panel Tweaks
+
+<details><summary>NVIDIA Control Panel Settings Optimization Guide</summary>
+<p>
+
+This will cover the settings you have to tweak to achieve minimal latency, high FPS, good frametimes and consistent colors.
+
+This guide will be split up into different sections. This makes it easier to navigate for you.
+
+*Note:*
+- Make sure you have an NVIDIA graphics card and that you have installed an NVIDIA GPU driver. (see step 2. above)
+- This guide is not intended for in-game graphics improvements, rather the exact opposite. You may experience a drop in graphics for more FPS.
+- Intended for fast-paced games, where latency and performance is of utmost importance.
+
+#### Open NVIDIA Control Panel
+
+To open NVIDIA Control Panel go to:
+
+- Control Panel > Hardware and Sound > NVIDIA Control Panel
+
+#### Adjust Image Settings with Preview
+
+1. Tick Use my preference emphasizing:
+2. Drag the slider all the way to the left so that it says Performance.
+3. Hit Apply in the bottom right.
+4. Now tick Use the advanced 3D image settings.
+  - This enforces a good foundation by applying the Performance image settings preset. This will save us some time in the next step.
+
+#### Manage 3D Settings
+
+You may not be able to see some of the Settings listed down below, just ignore that.
+
+Ensure that your 3D settings match the following.
+
+**Global Settings:**
+
+- Image Sharpening: Off
+- Ambient Occlusion: Off
+- Anisotropic filtering: Application-controlled
+- Antialiasing - FXAA: Off
+- Antialiasing - Gamma correction: Off
+- Antialiasing - Mode: Application-controlled
+- Antialiasing - Setting: None
+- Antialiasing - Transparency: Off
+- CUDA - GPUs: All
+- DSR - Factors: Off
+- DSR - Smoothness: Off
+- Low Latency Mode: On
+- Monitor Technology: Fixed Refresh
+- Multi-Frame Sampled AA (MFAA): Off
+- OpenGL rendering GPU: [your GPU]
+- Power management mode: Prefer maximum performance
+- Preferred refresh rate (monitor name): Highest available
+- Shader Cache: On
+- Texture filtering - Anisotropic sample optimization: On
+- Texture filtering - Negative LOD bias: Allow
+- Texture filtering - Quality: High performance
+- Texture filtering - Trilinear optimization: On
+- Threaded optimization: Auto
+- Triple bufferring: Off
+- Vertical sync: Off
+Virtual Reality pre-rendered frames: 1
+
+Now finally click <kbd>Apply</kbd> in the bottom right.
+
+#### Configure Surround PhysX
+- Under PhysX settings, make sure the Processor is set to your GPU.
+
+#### Change resolution
+1. Navigate to 3. Apply the following settings.
+2. Tick Use NVIDIA color settings.
+3. Make sure that Output dynamic range is set to Full.
+  - Additionally make sure that Output color format is set to RGB, most displays support it nowadays.
+
+
+#### Adjust desktop color settings
+
+- Tick Use NVIDIA Settings
+  - This ensures that your display colors will stay the same universally.
+
+#### Adjust desktop size and position
+
+1. Select your display.
+2. Under:
+  - 2. Apply the following settings:
+    - Scaling - Tick No scaling.
+  - Next under Perform scaling on: select Display and tick Override the scaling mode set by games and programs.
+
+*Note:*
+
+- The best resolution for your monitor will almost always be your native resolution with No scaling ticked. This is enforces the lowest display lag.
+- If you're using a stretched resolution set the scaling mode to Full-Screen.
+- If you have multiple monitors you might want to replicate above, using your secondary monitor(s).
+
+#### Setup G-SYNC
+
+Untick Enable G-SYNC, G-SYNC Compatible.
+
+- This is a debatable topic, whether G-SYNC causes additional input lag. Technically G-SYNC will add input lag, as it is a sync feature, meaning one thing has to wait for another, in order for them to be in sync. The question then remains, is the added input lag even perceivable? Probably not.
+
+#### Adjust video color image settings
+
+1. Head down to 2. How do you make color adjustments?.
+2. Tick With the NVIDIA settings.
+3. Go to Advanced and set Dynamic range: to Full (0-255).
+Replicate this on your other monitor(s) if you have any.
+
+#### Adjust video image settings
+
+1. Go to 2. Apply these settings to my video content:
+2. Under Edge enhancement tick Use the NVIDIA setting and drag the slider all the way to the left so that it says 0%.
+3. Apply the same settings to Noise reduction by ticking Use the NVIDIA setting then make sure the slider is all the way to the left, yet again at 0%.
+
+Replicate this on your other monitor(s) if you have any.
+</p>
+</details>
+
+## Advanced
+
+<details><summary>BIOS Tweaking</summary>
+<p>
+
+:::caution
+
+*This is not recommended, proceed at your own risk.*
+
+:::
+<details><summary>Proceed at own risk</summary>
+<p>
+
+Link to document: <kbd>[HERE](https://docs.google.com/document/d/1-izZaWrXaKIncYXDwmdY32YwdGCU5mDLJE6TW1Opnv8/edit)</kbd>
+
+</p>
+</details>
+
+</p>
+</details>

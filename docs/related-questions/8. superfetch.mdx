@@ -1,0 +1,65 @@
+---
+title: Enable Windows Defender / Superfetch / UAC / Notifications?
+slug: /related/superfetch
+description: How can I enable Windows Defender or Superfetch (SysMain) or UAC or Notifications?
+sidebar_position: 8
+sidebar_class_name: scrape-me-daddy
+---
+
+If the **shortcut** of the Revision Tool is not **on the Desktop**, follow this:
+
+On `22.11` or newer:
+
+1. The new Revision Tool is installed at `C:\Program Files (x86)\Revision Tool`
+2. Run the `revitool.exe`, or make a shortcut of it to the Desktop
+3. Select the desired option
+4. After the changes are done, restart your PC
+
+On every ReviOS build (**LEGACY TOOL**):
+
+1. In the `Documents` folder of the user go to `Workspace` and then `Revision-Tool` folder. To be exact: `%userprofile%\Documents\Workspace\Revision-Tool`
+2. Run `Start.bat`
+3. Select the desired option
+4. After the changes are done, restart your PC
+
+If you cannot find the Revision Tool, or you just want to download it, you can do it here:
+
+Download [Revision Tool](https://github.com/MeetRevision/revision-tool/releases/latest)
+
+
+import Admonition from '@theme/Admonition';
+
+<Admonition type="tip custom-admonition warning" icon={<i class="fa-solid fa-hexagon-exclamation fa-lg"></i>} title="Revision Tool on older builds of ReviOS">
+
+The requirement for this Revision Tool is at least `22.11`, or newer. Some of the functions of this version of Revision Tool might not work on every build of ReviOS.
+
+**Not exhaustive list of functions that will not work:**
+
+- Windows Defender before `11 21.12` and `10 22.01`
+- Superfetch before `22.05`
+- Full Screen Optimizations before `10 22.06` and `11 22.07`
+
+    Related: [ReviOS Changelog](https://www.revi.cc/revios/download/changelog)
+
+</Admonition>
+
+### Full list of features of the Revision Tool
+
+- Security
+    - Windows Defender (default: OFF)
+    - User Account Control (default: ON)
+    - Spectre & Meltdown Mitigation (default: OFF)
+    - Intel TSX (default: ON)
+- Usability
+    - Windows Notifications (default: ON)
+    - Legacy Notification Balloons (default: ON)
+    - Inking And Typing Personalization (default: OFF)
+    - Windows 11
+        - New Windows 11 Context Menu (default: OFF)
+        - File Explorer Tabs (default: ON)
+- Performance
+    - Superfetch (default: ON for HDD, OFF for SSD)
+    - Fullscreen optimization (default: ON)
+- Windows Updates
+    - Hide the Windows Updates page (default: ON)
+    - Automatic Driver Updates (default: OFF)

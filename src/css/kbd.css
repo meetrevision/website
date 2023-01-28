@@ -1,0 +1,40 @@
+@import url("./fontawesome/all.css");
+
+
+kbd {
+	background-color: #252525;
+	border: 1px solid #2d2d2d;
+	border-radius: 0.2rem;
+	box-shadow: inset 0 -1px 0 #00000000;
+	color: #ffffff;
+	font: 80% "Inter";
+	padding: 0.2rem 1rem;
+	cursor: pointer;
+	display: inline-block;
+  }
+  
+  kbd::before {
+	font-family: "Font Awesome 6 Pro", "FontAwesome";
+	font-size: 0.8rem;
+	font-weight: 500;
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	padding-right: 0.5rem;
+  }
+  
+  .win::before {
+	content: "\f17a";
+  }
+  
+  .shift::before {
+	content: "\f346";
+  }
+
+  .tab::before {
+	content: "\f340";
+  }
+
+  .del::before {
+	content: "\f55a";
+  }

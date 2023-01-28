@@ -1,0 +1,60 @@
+---
+title: Microsoft Store / Xbox App not working
+slug: /related/microsoft
+description: Is your Microsoft Store / Xbox App not working?
+sidebar_position: 9
+sidebar_class_name: scrape-me-daddy
+---
+
+import Kbd from '@site/src/components/Kbd';
+
+
+Run `ctfmon` and `wsreset` commands.
+
+As a last resort, you can try the `wsreset -i` command. It reinstalls the Store app. It must be let running at least 20 minutes.
+
+> *ReviOS 22.05 Store problem (not supported build anymore, so not relevant)*
+> 
+
+
+> *Older, ReviOS 22.01 and 22.02 Xbox app problem (not supported builds anymore):*
+>
+> If the updating is done, and Xbox login is still not working, go through these steps:
+>
+> 1. Go to [https://store.rg-adguard.net/](https://store.rg-adguard.net/)
+> 2. Change the search options from `URL (link)` to `PackageFamilyName` and `RP` to `Slow`, and search for `Microsoft.GamingApp_8wekyb3d8bbwe`
+> 3. Download the following packages:
+>     1. `Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx`
+>     2. `Microsoft.VCLibs.140.00.UWPDesktop_14.0.30704.0_x64__8wekyb3d8bbwe.appx`
+>     3. `Microsoft.UI.Xaml.2.7_7.2203.17001.0_x64__8wekyb3d8bbwe.appx`
+>     4. `Microsoft.GamingApp_2203.1001.4.0_neutral_~_8wekyb3d8bbwe.msixbundle`
+> 4. Go where you downloaded the files, <Kbd special="shift">Shift</Kbd> + <kbd>Right-Click</kbd> and choose `Open Powershell window here`
+> 5. Run `Add-AppxPackage` with the downloaded files. E.g.: `Add-AppxPackage Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx`.
+>
+>     **Make sure you install the packages in the order listed above.**
+>
+> 6. Restart
+
+<details open><summary>*ReviOS 22.05 Store problem (not supported build anymore, so not relevant)*</summary>
+<p>
+
+1. Open PowerShell in administrator mode, e.g. <kbd>Right-Click</kbd> on the Start Menu button (<Kbd special="win">Win</Kbd>), and select `Windows PowerShell (Admin)`
+
+2. Run this command:
+
+    ```powershell
+    Get-CimInstance -Namespace "Root\cimv2\mdm\dmmap" -ClassName "MDM_EnterpriseModernAppManagement_AppManagement01" | Invoke-CimMethod -MethodName UpdateScanMethod
+    ```
+
+3. After this, go inside the Store, and check for app updates.
+
+    On the older Store UI you can do it by:
+
+      1. Click the 3 dots in the upper right corner of the window
+      2. Click `Downloads and updates`
+
+    On the newer Store, you can do it by going inside the Library page.
+
+If you have updates, the Store should start installing them automatically. If not, click `Get Updates`.
+</p>
+</details>

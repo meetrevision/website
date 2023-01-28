@@ -1,0 +1,35 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.featureImg {
+  height: 100px;
+}
+
+.imgTitle {
+  font-weight: 400;
+}
+
+.imgSubTitle {
+  font-weight: 300;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.description {
+  font-weight: 300;
+}
+
+.description a {
+  font-weight: 600;
+}
+
+body {
+  font-family: 'Inter', sans-serif, monospace;
+}

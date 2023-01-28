@@ -1,0 +1,35 @@
+---
+title: System requirements
+slug: /related/requirements
+description: What are the system requirement for ReviOS?
+sidebar_position: 3
+sidebar_class_name: scrape-me-daddy
+---
+
+
+
+Refer to our website's section about this, although it is the same as the stock Windows have, but ReviOS usually uses less RAM, and fewer processes run. The Windows 11 versions of ReviOS have the Secure Boot and TPM requirements disabled only for the installation of the OS.
+
+import Admonition from '@theme/Admonition';
+
+<Admonition type="tip custom-admonition windows" icon={<i class="fa-brands fa-windows fa-lg"></i>} title="TPM and Secure Boot on Windows 11">
+  <p>
+	In order to play games or use anti-cheats that require Secure Boot and TPM, you still need to enable those functions. 
+	<p> </p>
+	For more information and confirmation, check the requirements of the software you are going to use. Usually, anti-cheats does not require neither TPM nor Secure Boot on Windows 10.
+  </p>
+</Admonition>
+
+### ReviOS RAM usage
+
+| Total RAM Capacity | Max Usage                       | Actual Available Amount |
+| ------------------ | ------------------------------- | ----------------------- |
+| 2 GB               | 1.1 GB down to 0.9, 1.4 GB peak | 600 MB to 1.1 GB        |
+| 4 GB               | 0.8 GB                          | 3.2 GB                  |
+| 8 GB               | 1 GB                            | 7 GB                    |
+| 16 GB              | 1 GB                            | 15 GB                   |
+| 24 GB              | 1.3 GB                          | 22.7 GB                 |
+
+Tested on a fresh installation of ReviOS 10 22.01, in VirtualBox, on AMD Ryzen 5900X.
+
+Credit to [Stasium#0001](https://stasium.dev/)
