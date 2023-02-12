@@ -140,17 +140,17 @@ function Info() {
 		<section style={{ padding: `2rem 0`}}>
 			<div className="container">
 				<div className="row">
-					<div className={clsx("col col--6")}>
-						<h2>What has changed?</h2>
-						<p>Recent version changes can be found in the <a href="/changelog">changelog</a>.</p>
+					<div className="card col margin-left--sm">
+						<h2 className="card__header">What has changed?</h2>
+						<p className="card__body">Recent version changes can be found in the <a href="/changelog">changelog</a>.</p>
 					</div>
-					<div className={clsx("col col--6")}>
-						<h2>Want to report a bug?</h2>
+					<div className="card col margin-left--sm margin-right--xs">
+						<h2 className="card__header">Want to report a bug?</h2>
 						<p>Please consult our <a href="/faq">FAQ</a> before reporting on our <a href="https://discord.com/invite/962y4pU">Discord server</a>, your problem may already be answered.</p>
 					</div>
-					<div className={clsx("col col--6")}>
-						<h2>Minimum system requirements</h2>
-						<p>
+					<div className="card col margin-left--xs margin-right--sm">
+						<h2 className="card__header">Minimum system requirements</h2>
+						<p className="card__body">
 							<ul className="checkmark-list">
 								<li>1 GHz dual core processor or better</li>
 								<li>2 GB of system memory (RAM)</li>
@@ -160,9 +160,9 @@ function Info() {
 							</ul>
 						</p>
 					</div>
-					<div className={clsx("col col--6")}>
-						<h2>Installation Guide</h2>
-						<p>For a detailed installation guide, check out the <a href="/faq/install">How to install</a> page of the FAQ.</p>
+					<div className="card col margin-right--sm">
+						<h2 className="card__header">Installation Guide</h2>
+						<p className="card__body">For a detailed installation guide, check out the <a href="/faq/install">How to install</a> page of the FAQ.</p>
 					</div>
 				</div>
 			</div>
