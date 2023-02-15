@@ -7,7 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "../index.module.css";
 
 function Download() {
-  const url = "https://revi-api.vercel.app/api/revios/downloads";
+  const url = "https://revi-api.vercel.app/api/revios/upgrade";
   const [isLoading, setLoading] = useState(true);
   const [downloads, setDownloads] = useState();
 
@@ -39,7 +39,13 @@ function Download() {
     );
   }
 
-  return <DownloadSection downloads={downloads} />;
+  return (
+    <div>
+      {downloads.map((props, idx) => (
+        <DownloadSection key={idx} {...props} />
+      ))}
+    </div>
+  );
 }
 
 function DownloadHeader() {
@@ -52,7 +58,7 @@ function DownloadHeader() {
       )}
     >
       <div className="container">
-        <h1 className="hero__title">Download ReviOS</h1>
+        <h1 className="hero__title">Upgrade ReviOS</h1>
       </div>
     </header>
   );
@@ -92,75 +98,48 @@ function DownloadInfo() {
   );
 }
 
-function DownloadSection({ downloads }) {
+function DownloadSection({ title, sub_title, description, tags, links }) {
   return (
-    <section>
+    <section style={{ padding: `2rem 0` }}>
       <div className="container">
-        <div className={clsx("row")}>
-          {downloads.map((props, idx) => (
-            <div
-              key={idx}
-              className={clsx("col", "padding-horiz--lg")}
-              style={{ padding: `1rem 0` }}
-            >
-              <h2>{props.title}</h2>
-              <h3>{props.sub_title}</h3>
-              <p>{props.description}</p>
+        <div className="row">
+          <div className={clsx("col")}>
+            <div className="padding-horiz-md">
+              <h2>{title}</h2>
+              <h3>{sub_title}</h3>
+              <p>{description}</p>
               <div className="buttonTagsDiv">
-                {props.tags.map((tag, i) => (
+                {tags.map((tag, i) => (
                   <button key={"tag" + i} className="buttonTags">
                     {tag}
                   </button>
                 ))}
               </div>
-
-              {props.links.map((link, i) => (
-                <div className={clsx("row margin-left--xs")}>
-                  <div className="downloadButtons">
-                    <h2 className="downloadTitle">{link.title}</h2>
-                    {link.buttons.map((button, i) => (
-                      <div className={styles.downloadBtn} {..."col col--6"}>
-                        <Link
-                          key={"btn" + i}
-                          className={
-                            !i
-                              ? "button button--secondary button--lg"
-                              : "button button--outline button--secondary button--lg"
-                          }
-                          to={button.url}
-                        >
-                          <i class="fa-duotone fa-download fa-lg"></i>
-                          <span className="buttonText">{button.title}</span>
-                        </Link>
-                      </div>
-                    ))}
+            </div>
+          </div>
+          {links.map((link, i) => (
+            <div className={clsx("col col--4")}>
+              <div className="padding-horiz--md downloadButtons">
+                <h2 className="downloadTitle">{link.title}</h2>
+                {link.buttons.map((button, i) => (
+                  <div className={styles.downloadBtn}>
+                    <Link
+                      key={"btn" + i}
+                      className={
+                        !i
+                          ? "button button--secondary button--lg"
+                          : "button button--outline button--secondary button--lg"
+                      }
+                      to={button.url}
+                    >
+                      <i class="fa-duotone fa-download fa-lg"></i>
+                      <span className="buttonText">{button.title}</span>
+                    </Link>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Update() {
-  return (
-    <section style={{ padding: `2rem 0` }}>
-      <div className="container">
-        <div className="row">
-          <div className={clsx("col col--12")}>
-            <h2>Looking to Upgrade your ReviOS install?</h2>
-            <p>
-              To upgrade from an old ReviOS version to a new one, without a full
-              reinstall, refer to the guide <a href="/faq/upgrade">here</a>.
-            </p>
-            <p>
-              You can find the ISO for upgrading{" "}
-              <a href="/downloads/upgrade">here</a>.
-            </p>
-          </div>
         </div>
         <hr></hr>
       </div>
@@ -237,7 +216,7 @@ function AdditionalInfo() {
             <h3>Alternative download links</h3>
             <p>
               Please join in our{" "}
-              <a href="https://discord.com/invite/962y4pU">Discord</a> and check
+              <a href="https://discord.com/invite/962y4pU">discord</a> and check
               the{" "}
               <a href="https://discord.com/channels/619835916139364383/658369065110339640">
                 download channel
@@ -264,8 +243,6 @@ export default function DownloadMain() {
       <main>
         <DownloadInfo />
         <Download />
-
-        <Update />
         <Info />
         <AdditionalInfo />
       </main>

@@ -147,7 +147,7 @@ details a {
   font-weight: 500;
 }
 
-.custom-admonition>div {
+.custom-admonition > div {
   text-transform: none;
   font-weight: 500;
   font-size: 1.2rem;
@@ -158,13 +158,13 @@ details a {
   text-decoration-color: var(--admonition-color);
 }
 
-.custom-admonition>div p {
+.custom-admonition > div p {
   font-size: 0.9rem;
   font-weight: 400;
   margin: 0 0 calc(1.25 * 0.5rem);
 }
 
-.custom-admonition li>p {
+.custom-admonition li > p {
   margin: 0.2rem 0.2rem;
 }
 
@@ -285,3 +285,8 @@ details a {
   list-style-type: checkmark-emoji;
 }
 
+hr {
+  background-color: rgba(35, 35, 35, 1);
+  height: 2px;
+  margin-top: 8.5px;
+}
