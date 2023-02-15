@@ -6,7 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "../index.module.css";
 
-function Download() {
+function DownloadLinks() {
   const url = "https://revi-api.vercel.app/api/revios/downloads";
   const [isLoading, setLoading] = useState(true);
   const [downloads, setDownloads] = useState();
@@ -24,7 +24,7 @@ function Download() {
 
   if (isLoading) {
     return (
-      <section style={{ padding: `2rem 0` }}>
+      <section className="padding-y--md">
         <div className="container">
           <div className="row lds-center">
             <div className="lds-ring">
@@ -42,216 +42,172 @@ function Download() {
   return <DownloadSection downloads={downloads} />;
 }
 
-function DownloadHeader() {
+function Header() {
   return (
-    <header
-      className={clsx(
-        "hero hero--primary",
-        styles.downloads,
-        styles.heroBanner
-      )}
-    >
+    <header className={clsx("hero hero--primary", styles.downloads, styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">Download ReviOS</h1>
+        <h3>
+          Unlock your machine's true potential with optimized performance, low latency and reduced data collection.
+        </h3>
       </div>
     </header>
   );
 }
 
-function DownloadInfo() {
-  return (
-    <section style={{ padding: `2rem 0` }}>
-      <div className="container">
-        <div className="row">
-          <div className={clsx("col col--12")}>
-            <p>
-              Download the latest release of ReviOS, a suitable replacement for
-              stock Windows on desktop PCs and Laptops. Unlock your machine's
-              true potential with optimized performance, low latency and reduced
-              data collection. As with any Windows installation, an official
-              license key is required.
-            </p>
-            <p>
-              By downloading ReviOS, you agree with the{" "}
-              <a href="/legal">Legal considerations</a> and{" "}
-              <a href="/terms">Terms of Use.</a>
-            </p>
-            <p>
-              To hash-check and verify the ISOs, go to{" "}
-              <a href="/downloads/verification">verification</a>
-            </p>
-            <p>
-              To support Revision, links are provided through ads. If any
-              problem occurs, please consider installing{" "}
-              <a href="https://ublockorigin.com">uBlock Origin</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function DownloadSection({ downloads }) {
   return (
-    <section>
-      <div className="container">
-        <div className={clsx("row")}>
-          {downloads.map((props, idx) => (
-            <div
-              key={idx}
-              className={clsx("col", "padding-horiz--lg")}
-              style={{ padding: `1rem 0` }}
-            >
-              <h2>{props.title}</h2>
-              <h3>{props.sub_title}</h3>
-              <p>{props.description}</p>
-              <div className="buttonTagsDiv">
-                {props.tags.map((tag, i) => (
-                  <button key={"tag" + i} className="buttonTags">
-                    {tag}
-                  </button>
-                ))}
-              </div>
-
-              {props.links.map((link, i) => (
-                <div className={clsx("row margin-left--xs")}>
-                  <div className="downloadButtons">
-                    <h2 className="downloadTitle">{link.title}</h2>
-                    {link.buttons.map((button, i) => (
-                      <div className={styles.downloadBtn} {..."col col--6"}>
-                        <Link
-                          key={"btn" + i}
-                          className={
-                            !i
-                              ? "button button--secondary button--lg"
-                              : "button button--outline button--secondary button--lg"
-                          }
-                          to={button.url}
-                        >
-                          <i class="fa-duotone fa-download fa-lg"></i>
-                          <span className="buttonText">{button.title}</span>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+    <section className="container padding-top--md">
+      <div className="row">
+        {downloads.map((props, idx) => (
+          <div key={idx} className="col padding-vert--md text--center">
+            <h2>{props.title}</h2>
+            <h3>{props.sub_title}</h3>
+            <p style={{ maxWidth: "50%", margin: "auto" }} className="margin-bottom--md">
+              {props.description}
+            </p>
+            <div>
+              {props.tags.map((tag, i) => (
+                <button key={"tag" + i} className="buttonTags">
+                  {tag}
+                </button>
               ))}
             </div>
-          ))}
-        </div>
+
+            {props.links.map((link, i) => (
+              <div>
+                {link.buttons.map((button, i) => (
+                  <div className="padding-vert--xs">
+                    <Link
+                      key={"btn" + i}
+                      className={
+                        !i
+                          ? "button button--secondary button--lg button--block"
+                          : "button button--outline button--secondary button--lg button--block"
+                      }
+                      to={button.url}
+                    >
+                      <i className="fa-duotone fa-download fa-lg"></i>
+                      <span className="padding-left--sm">{button.title}</span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-function Update() {
+function DownloadNotes() {
   return (
-    <section style={{ padding: `2rem 0` }}>
-      <div className="container">
-        <div className="row">
-          <div className={clsx("col col--12")}>
-            <h2>Looking to Upgrade your ReviOS install?</h2>
-            <p>
-              To upgrade from an old ReviOS version to a new one, without a full
-              reinstall, refer to the guide <a href="/faq/upgrade">here</a>.
-            </p>
-            <p>
-              You can find the ISO for upgrading{" "}
-              <a href="/downloads/upgrade">here</a>.
-            </p>
-          </div>
-        </div>
-        <hr></hr>
+    <section className="container padding-top--md">
+      <div>
+        <h3>Important Notes</h3>
+        <ul>
+          <li>
+            As with any Windows installation, a <b>Window Pro License key</b> is required.
+          </li>
+          <li>
+            These ISOs <b>require</b> you to wipe your drives. Please make proper backups of your important data.
+          </li>
+          <li>
+            To ensure an error-less download, verify the ISO using <a href="/downloads/verification">this guide</a>.
+          </li>
+          <li>
+            <b>Windows 11 only:</b> to play Valorant and other anti-cheat games, Secure Boot and TPM must be{" "}
+            <a href="https://www.windowscentral.com/how-enable-secure-boot-pc-install-windows-11">enabled in BIOS</a>.
+          </li>
+          <li>
+            By downloading ReviOS, you agree with the <a href="/legal">Legal considerations</a> and{" "}
+            <a href="/terms">Terms of Use</a>.
+          </li>
+          <li>
+            To support Revision, links are provided through ads. Should you have trouble getting the link, please
+            consider installing <a href="httlis://ublockorigin.com">uBlock Origin</a>.
+          </li>
+        </ul>
       </div>
     </section>
   );
 }
 
-function Info() {
+function UpgradeInfo() {
   return (
-    <section style={{ padding: `2rem 0` }}>
-      <div className="container">
-        <div className="row">
-          <div className={clsx("col col--6")}>
-            <h2>What has changed?</h2>
+    <section className="container padding-top--md">
+      <div>
+        <details className="padding-horiz--lg padding-vert--md" style={{ borderRadius: "5px" }}>
+          <summary style={{ cursor: "pointer" }}>Looking to update your installed ReviOS?</summary>
+          <div className="padding-top--sm">
             <p>
-              Recent version changes can be found in the{" "}
-              <a href="/changelog">changelog</a>.
+              The upgrading process is still experimental and <b>exclusively</b> works when you're already on a version
+              of ReviOS. It <b>does not work</b> if you're on anything else!
             </p>
+            <div className="row padding-horiz--md">
+              <Link
+                to="/faq/upgrade"
+                className="button button--outline button--secondary button--lg margin-bottom--sm col"
+              >
+                <i className="fa-duotone fa-book-open-cover" />
+                <span className="padding-left--sm">Upgrading Guide</span>
+              </Link>
+              <Link
+                to="/downloads/upgrade"
+                className="button button--outline button--secondary button--lg margin-bottom--sm col"
+              >
+                <i className="fa-duotone fa-arrow-up-right-from-square" />
+                <span className="padding-left--sm">Download Links</span>
+              </Link>
+            </div>
           </div>
-          <div className={clsx("col col--6")}>
-            <h2>Want to report a bug?</h2>
-            <p>
-              Please consult our <a href="/faq">FAQ</a> before reporting on our{" "}
-              <a href="https://discord.com/invite/962y4pU">Discord server</a>,
-              your problem may already be answered.
-            </p>
-          </div>
-          <div className={clsx("col col--6")}>
-            <h2>Minimum system requirements</h2>
-            <p>
-              <ul className="checkmark-list">
-                <li>1 GHz dual core processor or better</li>
-                <li>2 GB of system memory (RAM)</li>
-                <li>15-20 GB of free disk space (20-25GB for upgrading)</li>
-                <li>64 bit system capability</li>
-                <li>A DVD or a USB drive for the installation</li>
-              </ul>
-            </p>
-          </div>
-          <div className={clsx("col col--6")}>
-            <h2>Installation Guide</h2>
-            <p>
-              For a detailed installation guide, check out the{" "}
-              <a href="/faq/install">How to install</a> page of the FAQ.
-            </p>
-          </div>
-        </div>
+        </details>
       </div>
     </section>
   );
 }
 
-function AdditionalInfo() {
+function GeneralInfo() {
   return (
-    <section style={{ padding: `2rem 0` }}>
-      <div className="container">
-        <div className="row">
-          <div className={clsx("col col--12")}>
-            <h2>Additional Info</h2>
-            <h3>Windows 11</h3>
+    <section className="container padding-top--md">
+      <div className="row">
+        <div className="col col--7">
+          <span>
+            <h2>Unsure how to install?</h2>
             <p>
-              For Valorant and other anti-cheat games - Secure Boot and TPM must
-              be enabled in BIOS. See how it's done{" "}
-              <a href="https://www.windowscentral.com/how-enable-secure-boot-pc-install-windows-11">
-                here
-              </a>
-              .
+              The detailed installation guide can be found in the FAQ under "<a href="/faq/install">How to install</a>".
             </p>
-            {/* <h3>Other releases</h3>
+          </span>
+          <span>
+            <h2>Curious about the changes?</h2>
             <p>
-              For other versions of ReviOS, including old and deprecated
-              releases, see archive <a href="/downloads/archive">downloads</a>.
-            </p> */}
-            <h3>Alternative download links</h3>
-            <p>
-              Please join in our{" "}
-              <a href="https://discord.com/invite/962y4pU">Discord</a> and check
-              the{" "}
-              <a href="https://discord.com/channels/619835916139364383/658369065110339640">
-                download channel
-              </a>{" "}
-              for mirror links.
+              The update history can be found in the <a href="/changelog">Changelog</a>.
             </p>
-          </div>
+          </span>
+          <span>
+            <h2>Having trouble in the OS?</h2>
+            <p>
+              Our <a href="/faq">FAQ</a> has answers to many common problems. Should you not find an answer there, feel
+              free to ask for help in our <a href="https://discord.com/invite/962y4pU">Discord server</a>.
+            </p>
+          </span>
+        </div>
+        <div className="col">
+          <h2>Minimum system requirements</h2>
+          <ul className="checkmark-list">
+            <li>1 GHz dual core processor</li>
+            <li>2 GB of system memory (RAM)</li>
+            <li>15-20 GB of free disk space (20-25GB for upgrading)</li>
+            <li>64 bit system capability</li>
+          </ul>
         </div>
       </div>
     </section>
   );
 }
 
-export default function DownloadMain() {
+export default function Downloads() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
@@ -260,14 +216,12 @@ export default function DownloadMain() {
 		With the main audience being gamers, power-users and enthusiasts, we understand that performance, speed and low latency is obligatory, which is why great effort has been invested into making ReviOS a capable, efficient yet private operating system.
 		Being naturally light on resources, footprint and size it also comes in as a great fit for low-end systems. "
     >
-      <DownloadHeader />
+      <Header />
       <main>
-        <DownloadInfo />
-        <Download />
-
-        <Update />
-        <Info />
-        <AdditionalInfo />
+        <DownloadLinks />
+        <DownloadNotes />
+        <UpgradeInfo />
+        <GeneralInfo />
       </main>
     </Layout>
   );

@@ -37,23 +37,6 @@
   background-color: transparent;
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  padding: 7px;
-}
-
-.downloadBtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 7px;
-}
-
-.downloadBtn a {
-  text-decoration: none !important;
-}
-
 .homeButton {
   width: 100%;
   padding: 0.5rem 0;
