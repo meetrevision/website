@@ -108,20 +108,21 @@ function DownloadNotes() {
         <h3>Important Notes</h3>
         <ul>
           <li>
-            As with any Windows installation, a <b>Window Pro License key</b> is required.
+            A <b>Window Pro License key</b> is required to activate any ReviOS release.
           </li>
           <li>
             These ISOs <b>require</b> you to wipe your drives. Please make proper backups of your important data.
           </li>
           <li>
-            To ensure an error-less download, verify the ISO using <a href="/downloads/verification">this guide</a>.
+            Verify the ISO after downloading to ensure there are no errors with the help of{" "}
+            <a href="/downloads/verification">this guide</a>.
           </li>
           <li>
             <b>Windows 11 only:</b> to play Valorant and other anti-cheat games, Secure Boot and TPM must be{" "}
             <a href="https://www.windowscentral.com/how-enable-secure-boot-pc-install-windows-11">enabled in BIOS</a>.
           </li>
           <li>
-            By downloading ReviOS, you agree with the <a href="/legal">Legal considerations</a> and{" "}
+            By downloading ReviOS, you agree with the <a href="/legal">legal considerations</a> and{" "}
             <a href="/terms">Terms of Use</a>.
           </li>
           <li>
@@ -139,11 +140,11 @@ function UpgradeInfo() {
     <section className="container padding-top--md">
       <div>
         <details className="padding-horiz--lg padding-vert--md" style={{ borderRadius: "5px" }}>
-          <summary style={{ cursor: "pointer" }}>Looking to update your installed ReviOS?</summary>
+          <summary style={{ cursor: "pointer" }}>Looking to update your current ReviOS?</summary>
           <div className="padding-top--sm">
             <p>
-              The upgrading process is still experimental and <b>exclusively</b> works when you're already on a version
-              of ReviOS. It <b>does not work</b> if you're on anything else!
+              The upgrading process is still experimental and <b>exclusively</b> works if you're already on ReviOS. It{" "}
+              <b>does not work</b> if you're on anything else!
             </p>
             <div className="row padding-horiz--md">
               <Link
