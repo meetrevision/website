@@ -4,6 +4,7 @@ hide_table_of_contents: false
 ---
 
 # Credits and Acknowledgements
+
 Without the inspiring indivduals, projects and communities listed below, Revision wouldn't have been a reality. The list is in no specific order.
 
 <p>&nbsp;</p>
@@ -21,7 +22,7 @@ Without the inspiring indivduals, projects and communities listed below, Revisio
   - [Enthousiast](https://forums.mydigitallife.net/members/enthousiast.104688/) | reg tweaks, re-directing, creator of many useful threads
 - [UUP dump](https://uupdump.net/) | ISO base, testing, general ISO help/troubleshooting
 - [Stasium](https://github.com/stasiumdev) | helping with creating ReviOS and other tools, admin
-- [Dawe24](#) |  FAQ maintainer(old), helping with creating ReviOS, admin
+- [Dawe24](#) | FAQ maintainer, helping with creating ReviOS, admin
 - [Munty](https://steamcommunity.com/profiles/76561198170678182/) | mouse tweaks, regs, and overall general tweaking
 - [Felicity](https://www.twitch.tv/felicityc) | creator of the [Tweak Seller exposé](https://docs.google.com/document/d/1ZDFHUmM4ts3NpLM3jwv_pcPQbPtivDNBc9__J7FqEn4/edit), ex. admin and great friend
 - [Zoyata](https://www.twitch.tv/zoyata) | ex. admin, regs, general understanding of tweaks
@@ -39,3 +40,4 @@ Without the inspiring indivduals, projects and communities listed below, Revisio
 - [rajesh.kumar](https://msfn.org/board/profile/62731-rajeshkumar/) | Reg tweaks
 - [vinceliuice](https://github.com/vinceliuice/Fluent-gtk-theme) | Wallpaper
 - [AveYo](https://github.com/AveYo) | for the update script
+- [Morfixx](https://github.com/nahSystemu) | for making a new website and helper
