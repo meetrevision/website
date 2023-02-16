@@ -50,13 +50,7 @@ function Download() {
 
 function DownloadHeader() {
   return (
-    <header
-      className={clsx(
-        "hero hero--primary",
-        styles.downloads,
-        styles.heroBanner
-      )}
-    >
+    <header className={clsx("hero hero--primary", styles.downloads, styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">Upgrade ReviOS</h1>
       </div>
@@ -71,24 +65,19 @@ function DownloadInfo() {
         <div className="row">
           <div className={clsx("col col--12")}>
             <p>
-              Download the latest release of ReviOS, a suitable replacement for
-              stock Windows on desktop PCs and Laptops. Unlock your machine's
-              true potential with optimized performance, low latency and reduced
-              data collection. As with any Windows installation, an official
-              license key is required.
+              Download the latest release of ReviOS, a suitable replacement for stock Windows on desktop PCs and
+              Laptops. Unlock your machine's true potential with optimized performance, low latency and reduced data
+              collection. As with any Windows installation, an official license key is required.
             </p>
             <p>
-              By downloading ReviOS, you agree with the{" "}
-              <a href="/legal">Legal considerations</a> and{" "}
+              By downloading ReviOS, you agree with the <a href="/legal">Legal considerations</a> and{" "}
               <a href="/terms">Terms of Use.</a>
             </p>
             <p>
-              To hash-check and verify the ISOs, go to{" "}
-              <a href="/downloads/verification">verification</a>
+              To hash-check and verify the ISOs, go to <a href="/downloads/verification">verification</a>
             </p>
             <p>
-              To support Revision, links are provided through ads. If any
-              problem occurs, please consider installing{" "}
+              To support Revision, links are provided through ads. If any problem occurs, please consider installing{" "}
               <a href="https://ublockorigin.com">uBlock Origin</a>.
             </p>
           </div>
@@ -108,7 +97,7 @@ function DownloadSection({ title, sub_title, description, tags, links }) {
               <h2>{title}</h2>
               <h3>{sub_title}</h3>
               <p>{description}</p>
-              <div className="buttonTagsDiv">
+              <div>
                 {tags.map((tag, i) => (
                   <button key={"tag" + i} className="buttonTags">
                     {tag}
@@ -122,18 +111,18 @@ function DownloadSection({ title, sub_title, description, tags, links }) {
               <div className="padding-horiz--md downloadButtons">
                 <h2 className="downloadTitle">{link.title}</h2>
                 {link.buttons.map((button, i) => (
-                  <div className={styles.downloadBtn}>
+                  <div className="padding-vert--xs">
                     <Link
                       key={"btn" + i}
                       className={
                         !i
-                          ? "button button--secondary button--lg"
-                          : "button button--outline button--secondary button--lg"
+                          ? "button button--secondary button--lg button--block"
+                          : "button button--outline button--secondary button--lg button--block"
                       }
                       to={button.url}
                     >
                       <i class="fa-duotone fa-download fa-lg"></i>
-                      <span className="buttonText">{button.title}</span>
+                      <span className="padding-left--sm">{button.title}</span>
                     </Link>
                   </div>
                 ))}
@@ -155,16 +144,14 @@ function Info() {
           <div className={clsx("col col--6")}>
             <h2>What has changed?</h2>
             <p>
-              Recent version changes can be found in the{" "}
-              <a href="/changelog">changelog</a>.
+              Recent version changes can be found in the <a href="/changelog">changelog</a>.
             </p>
           </div>
           <div className={clsx("col col--6")}>
             <h2>Want to report a bug?</h2>
             <p>
               Please consult our <a href="/faq">FAQ</a> before reporting on our{" "}
-              <a href="https://discord.com/invite/962y4pU">Discord server</a>,
-              your problem may already be answered.
+              <a href="https://discord.com/invite/962y4pU">Discord server</a>, your problem may already be answered.
             </p>
           </div>
           <div className={clsx("col col--6")}>
@@ -182,8 +169,8 @@ function Info() {
           <div className={clsx("col col--6")}>
             <h2>Installation Guide</h2>
             <p>
-              For a detailed installation guide, check out the{" "}
-              <a href="/faq/install">How to install</a> page of the FAQ.
+              For a detailed installation guide, check out the <a href="/faq/install">How to install</a> page of the
+              FAQ.
             </p>
           </div>
         </div>
@@ -201,12 +188,8 @@ function AdditionalInfo() {
             <h2>Additional Info</h2>
             <h3>Windows 11</h3>
             <p>
-              For Valorant and other anti-cheat games - Secure Boot and TPM must
-              be enabled in BIOS. See how it's done{" "}
-              <a href="https://www.windowscentral.com/how-enable-secure-boot-pc-install-windows-11">
-                here
-              </a>
-              .
+              For Valorant and other anti-cheat games - Secure Boot and TPM must be enabled in BIOS. See how it's done{" "}
+              <a href="https://www.windowscentral.com/how-enable-secure-boot-pc-install-windows-11">here</a>.
             </p>
             {/* <h3>Other releases</h3>
             <p>
@@ -215,13 +198,9 @@ function AdditionalInfo() {
             </p> */}
             <h3>Alternative download links</h3>
             <p>
-              Please join in our{" "}
-              <a href="https://discord.com/invite/962y4pU">discord</a> and check
-              the{" "}
-              <a href="https://discord.com/channels/619835916139364383/658369065110339640">
-                download channel
-              </a>{" "}
-              for mirror links.
+              Please join in our <a href="https://discord.com/invite/962y4pU">discord</a> and check the{" "}
+              <a href="https://discord.com/channels/619835916139364383/658369065110339640">download channel</a> for
+              mirror links.
             </p>
           </div>
         </div>

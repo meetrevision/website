@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/palenight');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Revision',
-  tagline: '',
+  tagline: 'Where knowledge and technology unite.',
   url: 'https://revi.cc',
   baseUrl: '/',
   onBrokenLinks: 'warn',

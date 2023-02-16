@@ -112,10 +112,6 @@ main a:hover {
   font-weight: 600;
 }
 
-.buttonText {
-  padding-left: 1rem;
-}
-
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
@@ -204,11 +200,6 @@ details a {
   border-left: 5px solid var(--admonition-color);
 }
 
-.buttonTagsDiv {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .buttonTags {
   pointer-events: none;
   background-color: #232323;
@@ -289,4 +280,19 @@ hr {
   background-color: rgba(35, 35, 35, 1);
   height: 2px;
   margin-top: 8.5px;
+}
+
+.button--icon a,
+.button--icon span,
+.button--icon p {
+  margin-left: 0.7em;
+}
+
+.button {
+  text-decoration: none;
+}
+
+div.row:has(a.button) {
+  column-gap: 1em;
+  justify-content: center !important;
 }

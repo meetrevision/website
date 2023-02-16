@@ -107,17 +107,17 @@ const FeatureList = [
 
 function Feature({ img, imgTitle, title, imgSubTitle, description }) {
   return (
-    <section style={{ paddingTop: `4rem` }}>
+    <section className="margin-vert--lg">
       <div className="container">
         <div className="row">
           <div className={clsx("col col--3")}>
-            <div className="text--center">
+            <div className="text--center" style={{ alignItems: "center" }}>
               <img className={styles.featureImg} src={img} />
               <h2 className={styles.imgTitle}>{imgTitle}</h2>
               <h4 className={styles.imgSubTitle}>{imgSubTitle}</h4>
             </div>
           </div>
-          <div className={clsx("col col--8")}>
+          <div className={clsx("col col--9")}>
             <div className="text--left">
               <h3 className={styles.title}>{title}</h3>
               <p className={styles.description}>{description}</p>
