@@ -294,5 +294,6 @@ hr {
 
 div.row:has(a.button) {
   column-gap: 1em;
+  row-gap: 0.5em;
   justify-content: center !important;
 }
