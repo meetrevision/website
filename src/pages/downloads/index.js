@@ -145,7 +145,7 @@ function UpgradeInfo() {
           </summary>
           <div className="row margin-top--sm ">
             <div className="col col--4">
-              <span className="text--center">
+              <span className="text--left">
                 <p>
                   The upgrading process is still experimental and <b>exclusively</b> works if you're already on ReviOS.
                   It <b>does not work</b> if you're on anything else!
