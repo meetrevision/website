@@ -6,8 +6,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "../index.module.css";
 
-function DownloadLinks() {
-  const url = "https://revi-api.vercel.app/api/revios/downloads";
+function DownloadLinks({ urlSnub }) {
+  const url = "https://revi-api.vercel.app/api/revios/" + urlSnub;
+  let isUpgrade;
+  urlSnub === "upgrade" && (isUpgrade = true);
   const [isLoading, setLoading] = useState(true);
   const [downloads, setDownloads] = useState();
 
@@ -39,7 +41,7 @@ function DownloadLinks() {
     );
   }
 
-  return <DownloadSection downloads={downloads} />;
+  return <DownloadSection downloads={downloads} isUpgrade={isUpgrade} />;
 }
 
 function Header() {
@@ -55,43 +57,41 @@ function Header() {
   );
 }
 
-function DownloadSection({ downloads }) {
+function DownloadSection({ downloads, isUpgrade }) {
   return (
-    <section className="container padding-top--md">
+    <section className={!isUpgrade ? "container padding-top--md" : "col"}>
       <div className="row">
         {downloads.map((props, idx) => (
           <div key={idx} className="col padding-vert--md text--center">
             <h2>{props.title}</h2>
-            <h3>{props.sub_title}</h3>
-            <p style={{ maxWidth: "50%", margin: "auto" }} className="margin-bottom--md">
-              {props.description}
-            </p>
-            <div>
-              {props.tags.map((tag, i) => (
-                <button key={"tag" + i} className="buttonTags">
-                  {tag}
-                </button>
-              ))}
-            </div>
-
-            {props.links.map((link, i) => (
-              <div>
-                {link.buttons.map((button, i) => (
-                  <div className="padding-vert--xs">
-                    <Link
-                      key={"btn" + i}
-                      className={
-                        !i
-                          ? "button button--secondary button--lg button--block"
-                          : "button button--outline button--secondary button--lg button--block"
-                      }
-                      to={button.url}
-                    >
-                      <i className="fa-duotone fa-download fa-lg"></i>
-                      <span className="padding-left--sm">{button.title}</span>
-                    </Link>
-                  </div>
-                ))}
+            {!isUpgrade && (
+              <>
+                <h3>{props.sub_title}</h3>
+                <p style={{ maxWidth: "50%", margin: "auto" }} className="margin-bottom--md">
+                  {props.description}
+                </p>
+                <div>
+                  {props.tags.map((tag, i) => (
+                    <button key={"tag" + i} className="buttonTags">
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+            {props.links[0].buttons.map((button, i) => (
+              <div key={"btn" + i} className="padding-vert--xs">
+                <Link
+                  className={
+                    !i
+                      ? "button button--secondary button--lg button--block"
+                      : "button button--outline button--secondary button--lg button--block"
+                  }
+                  to={button.url}
+                >
+                  <i className="fa-duotone fa-download fa-lg"></i>
+                  <span className="padding-left--sm">{button.title}</span>
+                </Link>
               </div>
             ))}
           </div>
@@ -140,28 +140,26 @@ function UpgradeInfo() {
     <section className="container padding-top--md">
       <div>
         <details className="padding-horiz--lg padding-vert--md" style={{ borderRadius: "5px" }}>
-          <summary style={{ cursor: "pointer" }}>Looking to update your current ReviOS?</summary>
-          <div className="padding-top--sm">
-            <p>
-              The upgrading process is still experimental and <b>exclusively</b> works if you're already on ReviOS. It{" "}
-              <b>does not work</b> if you're on anything else!
-            </p>
-            <div className="row padding-horiz--md">
-              <Link
-                to="/faq/upgrade"
-                className="button button--outline button--secondary button--lg margin-bottom--sm col"
-              >
+          <summary style={{ cursor: "pointer" }}>
+            <b>Looking to update your current ReviOS?</b>
+          </summary>
+          <div className="row margin-top--sm ">
+            <div className="col col--4">
+              <span className="text--left">
+                <p>
+                  The upgrading process is still experimental and <b>exclusively</b> works if you're already on ReviOS.
+                  It <b>does not work</b> if you're on anything else!
+                </p>
+                <p className="margin-bottom--none">
+                  We also urge you to read the <b>Upgrade Guide</b> to ensure a smooth upgrade without data loss.
+                </p>
+              </span>
+              <Link to="/faq/upgrade" className="button button--primary button--lg button--block margin-top--sm ">
                 <i className="fa-duotone fa-book-open-cover" />
                 <span className="padding-left--sm">Upgrading Guide</span>
               </Link>
-              <Link
-                to="/downloads/upgrade"
-                className="button button--outline button--secondary button--lg margin-bottom--sm col"
-              >
-                <i className="fa-duotone fa-arrow-up-right-from-square" />
-                <span className="padding-left--sm">Download Links</span>
-              </Link>
             </div>
+            <DownloadLinks urlSnub={"upgrade"} />
           </div>
         </details>
       </div>
@@ -219,7 +217,7 @@ export default function Downloads() {
     >
       <Header />
       <main>
-        <DownloadLinks />
+        <DownloadLinks urlSnub={"downloads"} />
         <DownloadNotes />
         <UpgradeInfo />
         <GeneralInfo />
