@@ -7,7 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "../index.module.css";
 
 function DownloadLinks({ urlSnub }) {
-  const url = "https://revi-api.vercel.app/api/revios/" + urlSnub;
+  const url = "https://api.revi.cc/api/revios/" + urlSnub;
   let isUpgrade;
   urlSnub === "upgrade" && (isUpgrade = true);
   const [isLoading, setLoading] = useState(true);
@@ -80,17 +80,18 @@ function DownloadSection({ downloads, isUpgrade }) {
               </>
             )}
             {props.links[0].buttons.map((button, i) => (
-              <div key={"btn" + i} className="padding-vert--xs">
+              <div key={"btn" + i} className="padding-vert--xs padding-horiz--md">
                 <Link
-                  className={
-                    !i
-                      ? "button button--secondary button--lg button--block"
-                      : "button button--outline button--secondary button--lg button--block"
-                  }
                   to={button.url}
                 >
-                  <i className="fa-duotone fa-download fa-lg"></i>
-                  <span className="padding-left--sm">{button.title}</span>
+                  <button className={
+                    !i
+                      ? "button button--block button--secondary button--lg button--block"
+                      : "button button--block button--outline button--secondary button--lg button--block"
+                  }>
+                    <i className="fa-duotone fa-download fa-lg"></i>
+                    <span className="padding-left--sm">{button.title}</span>
+                  </button>
                 </Link>
               </div>
             ))}

@@ -1,6 +1,7 @@
 ---
 title: Credits
 hide_table_of_contents: false
+toc_min_heading_level: 3
 ---
 
 # Credits and Acknowledgements
@@ -40,4 +41,4 @@ Without the inspiring indivduals, projects and communities listed below, Revisio
 - [rajesh.kumar](https://msfn.org/board/profile/62731-rajeshkumar/) | Reg tweaks
 - [vinceliuice](https://github.com/vinceliuice/Fluent-gtk-theme) | Wallpaper
 - [AveYo](https://github.com/AveYo) | for the update script
-- [Morfixx](https://github.com/nahSystemu) | for making a new website and helper
+- [Morfixx](https://github.com/nahSystemu) | for making a new website

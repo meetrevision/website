@@ -1,7 +1,8 @@
 ---
 title: About Revision
 description: Brief introduction to Revision, and what we are about
-hide_table_of_contents: true
+hide_table_of_contents: false
+toc_min_heading_level: 3
 ---
 
 # About

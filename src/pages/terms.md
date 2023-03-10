@@ -1,6 +1,7 @@
 ---
 title: Terms of Use
 hide_table_of_contents: false
+toc_min_heading_level: 3
 ---
 
 # Terms of Use
@@ -29,7 +30,9 @@ Always do and test backups beforehand through multiple means, copies or on multi
 
 ## Possible risks
 
-A non-exhaustive list of risks for any custom Windows ISO (such as the ones presented on this site) include, but are not limited to, some or all of the following.
+A non-exhaustive list of risks for any custom Windows ISO include, but are not limited to, some or all of the following.
+
+Any item listed below **does not affect** ReviOS (if downloaded from the official sources), and this can be confirmed by reviewing the CSV files that are provided on [the Verification page](/downloads/verification).
 
 Malicious hidden keystroke registration and uploading to third party servers - including:
 

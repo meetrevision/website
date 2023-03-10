@@ -93,16 +93,17 @@ const FeatureList = [
 
 function Feature({ img, imgTitle, title, imgSubTitle, description }) {
   return (
-    <section className="margin-vert--lg">
-      <div className="container row" style={{ alignItems: "center" }}>
-        <div className="col col--3">
+    <section>
+      <hr />
+      <div className="container row padding-vert--lg" style={{ alignItems: "center" }}>
+        <div className="col col--3 padding-vert--lg">
           <div className="text--center">
             <img className={styles.featureImg} src={img} />
             <h2 className={styles.imgTitle}>{imgTitle}</h2>
             <h4 className={styles.imgSubTitle}>{imgSubTitle}</h4>
           </div>
         </div>
-        <div className="col col--9">
+        <div className="col col--9 padding-horiz--lg">
           <div className="text--left">
             <h3 className={styles.title}>{title}</h3>
             <span className={styles.description}>{description}</span>

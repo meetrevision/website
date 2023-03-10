@@ -289,7 +289,11 @@ hr {
 }
 
 .button {
-  text-decoration: none;
+  display: inline-block;
+  text-decoration: none !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 div.row:has(a.button) {

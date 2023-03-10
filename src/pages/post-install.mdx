@@ -21,7 +21,7 @@ You will get better FPS, lower and more stable frametimes, better input and late
 
 ReviOS may activate itself automatically upon installation, using the OEM key connected to your BIOS, just like any other Windows version would do.
 
-If your ReviOS installation isn't automatically activated, follow one of the Methods listed down below.
+If your ReviOS installation isn't automatically activated, follow one of the methods listed down below.
 
 <details><summary>Method 1 - Windows Settings</summary>
 <p>
@@ -110,17 +110,17 @@ We're going to be using third party programs called [NVCleanstall](https://www.t
 <details><summary>Installing NVCleanstall</summary>
 <p>
 
-1. [Download and install NVCleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
-2. Open the program, and tick Install the best driver for my hardware, then click <kbd>Next</kbd>.
+- [Download and install NVCleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
+- Open the program, and tick Install the best driver for my hardware, then click <kbd>Next</kbd>.
   - You can also manually select your preferred GPU driver with the option below.
-3. Tick Minimum or Recommended in the bottom right, after that hit Next. (We recommend Minimum)
-  - No need to tick the Visual Runtimes as they're already included in the ISO.
+- Tick Minimum or Recommended in the bottom right, after that hit Next. (We recommend Minimum)
+  - No need to tick the Visual Runtimes as we are separately installing them afterwards.
   - [PhysX](https://developer.nvidia.com/gameworks-physx-overview) is only used by a [handful of games](https://en.wikipedia.org/wiki/List_of_games_with_hardware-accelerated_PhysX_support), so most of you can keep this unticked.
   - If ShadowPlay is a necessity, make sure you only select the bare minimum required for it. Note that ShadowPlay adds telemetry onto your system!
     - You can use [this script](https://github.com/Moyster/BaiGfe) to remove GeForce Expterience telemetry.
-4. While the Driver is being downloaded you can tick a few tweaks under Additional Tweaks.
+- While the driver is being downloaded you can tick a few tweaks under Additional Tweaks.
   - We recommend you to tick everything except Unattended Express Installation.
-5. Now your driver will be installed like any other NVIDIA driver.
+- Now your driver will be installed like any other NVIDIA driver.
 
 </p>
 </details>
@@ -130,45 +130,30 @@ We're going to be using third party programs called [NVCleanstall](https://www.t
 <details><summary>Installing NVSlimmer</summary>
 <p>
 
-1. [Download and install NVSlimmer](https://www.guru3d.com/files-get/nvidia-driver-slimming-utility,2.html) and download regular Nvidia drivers from the official website (I recommend [the 442.74 version](https://www.nvidia.com/download/driverResults.aspx/158756/en-us/))
-2. Import your downloaded driver to the software, and preferably keep only both required packages.
-3. Only check other options if you need them, ie. if you have a Usb-C port, tick the Usb-c driver, or if you need Geforce Experience, tick it
+- [Download and install NVSlimmer](https://www.guru3d.com/files-get/nvidia-driver-slimming-utility,2.html) and download regular Nvidia drivers from the official website
+- Import your downloaded driver to the software, and preferably keep only both required packages.
+- Only check other options if you need them, ie. if you have a Usb-C port, tick the Usb-c driver, or if you need Geforce Experience, tick it
   - No need to tick the Visual Runtimes as we are separately installing them afterwards.
   - [PhysX](https://developer.nvidia.com/gameworks-physx-overview) is only used by a [handful of games](https://en.wikipedia.org/wiki/List_of_games_with_hardware-accelerated_PhysX_support), so most of you can keep this unticked.
-4. Press Apply and then Install driver when prompted, and it will install just like any NVIDIA driver.
+- Press Apply and then Install driver when prompted, and it will install just like any NVIDIA driver.
 
 </p>
 </details>
 
 ### AMD
 
-Installing your GPU drivers on AMD Cards is straightforward and doesn't need any slimming whatsover, unless you don't even want the AMD Control Panel.
+Since AMD Radeon Software Adrenalin 21.4.1 release, users have an option to choose full installation, minimal installation, or driver only installation, during the initial setup for Radeon Software.
 
-*We don't recommend that, but if you really want to, follow the steps in this video provided by Zeal.*
-#### [🔗 Video Tutorial](https://youtu.be/UM4lfvlBevl)
-
-### Intel - For U Series (6th Gen+)
-
-<details><summary>Installing Drivers for Intel</summary>
-<p>
-
-Newer Intel chips have been stuck with DCH drivers, which need Microsoft store to get the control panel. If you are in this scenario and want the old Intel control panel, follow the steps below:
-
-1. Download the Intel driver .zip from [here](https://drive.google.com/file/d/1TrqlYvl644g0s3eOhfLJPRz3PgGGF8RI/view) and unzip it.
-2. Open device manager, and navigate to display adapters .
-3. Right click your Intel display adapter and click update driver.
-5. Click <kbd>Let me pick from a list</kbd> and then press “Have disk”.
-6. Click <kbd>Browse</kbd> and navigate into the folder we extracted earlier.
-7. Enter the graphics folder, and select the .inf that appears on screen.
-8. Click <kbd>Open</kbd>, and then <kbd>Okay</kbd>, and then scroll through and click on your graphics card. 
-9. Click <kbd>Next</kbd> and then <kbd>Yes</kbd>
+- [Select your graphics model](https://www.amd.com/en/support), choose your Operating System and click on the Download button
+- After the download is complete, open the save folder and double-click the file to begin setup.
+- Click Install to unpack the setup files and wait to automatically run the unpacked installer
+  - **Note:** It is recommended to use the default location.
+- Click **Additional Options**
+- In the **Install Type** section, select **Minimal Install** instead of Full Install
+- Press **Install** and once it finishes, it is highly recommended to restart your PC
 
 </p>
 </details>
-
-</p>
-</details>
-
 
 ## 2. DirectX Runtime
 

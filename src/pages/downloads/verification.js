@@ -118,7 +118,7 @@ function HashesSection({ index, name, md5, sha256 }) {
           <div className={clsx("col col-12")}>
             <div className="text--left padding-horiz--md">
               <hr />
-              <h3>{index == 0 || index == 1 ? "✅" + name : name}</h3>
+              <h3>{index < 4 ? name + " ✅" : name}</h3>
               <p>MD5:</p>
               <pre>
                 <code>{md5}</code>

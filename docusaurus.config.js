@@ -58,11 +58,11 @@ const config = {
                 to: '/downloads'
               },
               {
-                label: ' • Changelog',
+                label: 'Changelog',
                 to: '/changelog'
               },
               {
-                label: ' • Verification',
+                label: 'Verification',
                 to: '/downloads/verification'
               },
               {
@@ -167,21 +167,21 @@ const config = {
         respectPrefersColorScheme: false,
       },
     }),
-    plugins: [
-      [
-        '@docusaurus/plugin-content-blog',
-        {
-          id: 'changelog',
-          routeBasePath: '/changelog',
-          path: 'changelog',
-          blogTitle: 'Changelog',
-          blogSidebarTitle: 'Recent changes',
-          blogDescription: 'Revision Changelog',
-          showReadingTime: false,
-          blogSidebarCount: 'ALL',
-        },
-      ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'changelog',
+        routeBasePath: '/changelog',
+        path: 'changelog',
+        blogTitle: 'Changelog',
+        blogSidebarTitle: 'Recent changes',
+        blogDescription: 'Revision Changelog',
+        showReadingTime: false,
+        blogSidebarCount: 'ALL',
+      },
     ],
+  ],
 };
 
 module.exports = config;

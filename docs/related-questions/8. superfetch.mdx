@@ -3,7 +3,7 @@ title: Enable Windows Defender / Superfetch / UAC / Notifications?
 slug: /related/superfetch
 description: How can I enable Windows Defender or Superfetch (SysMain) or UAC or Notifications?
 sidebar_position: 8
-sidebar_class_name: scrape-me-daddy
+sidebar_class_name: scrapper
 ---
 
 If the **shortcut** of the Revision Tool is not **on the Desktop**, follow this:
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="tip custom-admonition warning" icon={<i class="fa-solid fa-hexagon-exclamation fa-lg"></i>} title="Revision Tool on older builds of ReviOS">
 
-The requirement for this Revision Tool is at least `22.11`, or newer. Some of the functions of this version of Revision Tool might not work on every build of ReviOS.
+The requirement for this Revision Tool is at least `22.10`, or newer. Some of the functions of this version of Revision Tool might not work on every build of ReviOS.
 
 **Not exhaustive list of functions that will not work:**
 
@@ -39,27 +39,30 @@ The requirement for this Revision Tool is at least `22.11`, or newer. Some of th
 - Superfetch before `22.05`
 - Full Screen Optimizations before `10 22.06` and `11 22.07`
 
-    Related: [ReviOS Changelog](https://www.revi.cc/revios/download/changelog)
-
 </Admonition>
 
 ### Full list of features of the Revision Tool
 
-- Security
+- **Security**
     - Windows Defender (default: OFF)
     - User Account Control (default: ON)
     - Spectre & Meltdown Mitigation (default: OFF)
     - Intel TSX (default: ON)
-- Usability
+- **Usability**
     - Windows Notifications (default: ON)
     - Legacy Notification Balloons (default: ON)
     - Inking And Typing Personalization (default: OFF)
     - Windows 11
         - New Windows 11 Context Menu (default: OFF)
         - File Explorer Tabs (default: ON)
-- Performance
-    - Superfetch (default: ON for HDD, OFF for SSD)
+- **Performance**
+    - Superfetch (default: OFF for SSD; ON for HDD)
     - Fullscreen optimization (default: ON)
-- Windows Updates
+    - Optimizations for windowed games (default: OFF)
+- **Windows Updates**
     - Hide the Windows Updates page (default: ON)
     - Automatic Driver Updates (default: OFF)
+- **Miscellaneous**
+    - Fast Startup & Hibernate (default: OFF)
+    - Network and GPU monitoring (default: OFF)
+    - Multiplane overlay (MPO) (default: ON)

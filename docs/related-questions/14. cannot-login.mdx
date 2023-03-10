@@ -1,0 +1,43 @@
+---
+title: I cannot log into my use
+slug: related/i-cannot-log-into-my-user
+description: I cannot log into my user
+sidebar_position: 14
+sidebar_class_name: scrapper
+---
+
+*Solution (2023-01-04):*
+
+After this bug was thought to be "extinct", a user reported it again, and this time a solution was found too.
+
+You need any **bootable** password remover tool. This example will use the toolkit of [Hiren's Boot CD](https://www.hirensbootcd.org/).
+
+This is a [Windows PE](https://en.wikipedia.org/wiki/Windows_Preinstallation_Environment), equipped with tools for system administrators. Since it's a live Windows, you need to make the ISO file bootable. Either with [Rufus](https://www.google.com/search?q=how+to+use+rufus), or with [Ventoy](https://revios.rignoa.com/install/#ventoy).
+
+When you boot into the WinPE:
+
+* Close the network window, you will not need internet access for this
+* Open the `Utilities` folder on the desktop
+* Then go to the `Security\Passwords `folder
+* Run `Windows Login Unlocker`
+* Select your user from the list. It will show the username you gave it after installing ReviOS
+* Click `Reset\Unlock`
+* After it is complete, reboot into your ReviOS instance, and you should be able to log in
+
+At this point, the relation of the linked Microsoft account and local user is confusing. In the past, this problem could be avoided by setting a PIN code, not just a password, but here, the MS account is still attached, but there is no password on the user. And if set a local one, that will be used. And no PIN is required (meaning the bug is gone).
+
+Either way, it's recommended to either detach the MS account from the user or set a password and PIN, just to be safe.
+
+Please read the previous statuses of the problem below for more information.
+
+*Update (2022-07-24):*
+
+In ReviOS 22.07 (Windows 10 and 11) and above this problem is resolved. Even if you do not set a password at installation, and evade setting a PIN code when logging into your Microsoft account, at the login screen a window will pop up, and after logging in again with your MS account, you have to set a PIN code.
+
+The PIN code forcing can be disabled in `Settings` -> `Accounts` -> `Sign-in options` with `For improved security, only allow Windows Hello sign-in for Microsoft accounts on this device (Recommended)` after loggin in with your MS account and setting a PIN code. Then you can delete the PIN code, if you want to.
+
+*Previously:*
+
+This is happening, because of the connection of a Microsoft account to the local user. Right now the only fix is to reinstall your OS, and after you log into your Microsoft account set a PIN code too.
+
+Other technique to evade the bug, is to log into your Microsoft account in the Microsoft Store. That way you will not be locked out and still can use your PC without a PIN code. Partial solution reported with [this message on our Discord](https://discord.com/channels/619835916139364383/626772969611460619/944214984047616001).
