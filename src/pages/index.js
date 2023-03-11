@@ -34,7 +34,7 @@ function HomepageHeader() {
 function RevisionAbout() {
     return (
         <section className="margin-vert--lg">
-            <div className="container padding--lg">
+            <div className="container padding-horiz--lg">
                 <h1>Introduction</h1>
                 <div className="text--left">
                     <p>
@@ -42,10 +42,10 @@ function RevisionAbout() {
                         open source principles. Every mind is unique and every contribution is valued.
                     </p>
                 </div>
-                <div class="padding-horiz--xl">
+                <div className="padding-horiz--lg">
                     <div className="row" style={{ justifyContent: "center" }}>
-                        <div class="col col--4">
-                            <div class="padding-vert--xs">
+                        <div className="col col--4">
+                            <div className="padding-vert--xs">
                                 <Link to="https://discord.gg/962y4pU">
                                     <button className="button button--block button--secondary button--outline">
                                         <i className="fa-brands fa-discord" />
@@ -55,8 +55,8 @@ function RevisionAbout() {
                             </div>
                         </div>
 
-                        <div class="col col--4">
-                            <div class="padding-vert--xs">
+                        <div className="col col--4">
+                            <div className="padding-vert--xs">
                                 <Link to="https://github.com/MeetRevision">
                                     <button className="button button--block button--secondary button--outline">
                                         <i className="fa-brands fa-github" />
@@ -79,11 +79,11 @@ function ReviAbout() {
             <div className={
                 clsx("container mockup-image--1")
             }>
-                <div class="container">
-                    <div class="row">
-                        <div class="col col--8">
+                <div className="container">
+                    <div className="row">
+                        <div className="col col--8">
                             <p>
-                                <b>ReviOS</b>, a customized version of Windows 10 with improved performance, stability, and compatibility. It
+                                <b>ReviOS</b>, a customized version of Windows with improved performance, stability, and compatibility. It
                                 aspires to re-create what Windows as an operating system should have been - easy and simple.
                             </p>
                             <p>
@@ -96,8 +96,8 @@ function ReviAbout() {
                                 Being naturally light on resources, footprint and size it also comes in as a great fit for low-end systems.
                             </p>
                         </div>
-                        <div class="col col--4">
-                            <div class="padding-vert--sm">
+                        <div className="col col--4">
+                            <div className="padding-vert--sm">
                                 {
                                     [
                                         {
@@ -113,11 +113,10 @@ function ReviAbout() {
                                             className: 'button--outline button--secondary',
                                             label: 'Changelog'
                                         },
-                                    ].map((button, index) => (
+                                    ].map((button, i) => (
 
-                                        <div style={{ paddingTop: "3%" }}>
-                                            <Link key={index}
-                                                to={button.to}>
+                                        <div key={i} style={{ paddingTop: "3%" }}>
+                                            <Link to={button.to}>
                                                 <button className={`button button--lg button--block ${button.className}`}>
                                                     {button.label}
                                                 </button>

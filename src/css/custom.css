@@ -54,7 +54,10 @@ nav .navbar__item {
 }
 
 .hero {
-  background-color: #00000062;
+    background-color: #00000062;
+    height: 93vh;
+    background-size: cover;
+    background-position: center right;
 }
 
 .pagination-nav__link {
